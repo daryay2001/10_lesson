@@ -30,8 +30,8 @@
 ###
 import random
 import math
-# # from random import *
-# from random import randint, choice
+# from random import *
+from random import randint, choice
 
 # print(random.randint(1, 100))  # от 1 до 100
 # print(random.random())
@@ -46,24 +46,29 @@ import math
 ##
 # print(-math.inf)
 # print(math.inf)
-# print(math.ceil(10.2))
-# print(math.floor(10.999))
-# print(math.factorial(5))
-# print(math.pow(2, 3))
-# print(math.sqrt(9))
+# print(math.ceil(10.2)) # округление в большую сторону
+# print(math.floor(10.999)) # округление в меньшую сторону
+# print(math.factorial(5)) # факториал 5
+# print(math.pow(2, 3)) # 2 в 3й степени
+# print(math.sqrt(9)) # корень квадратный
 
 ##
-# from decimal import *
-#
-# number = 0.1 + 0.1 + 0.1
+# decimal - тип данных в виде особого модуля, особо точные дробные числа
+from decimal import * # из decimal импортировать все
+
+# number = 0.1 + 0.1 + 0.1 + 0.1 + 0.2
 # print(number)
 # number = Decimal("0.1")
 # number = number + number + number
 # print(number)
 #
 # number = Decimal("0.333")
-# number = number.quantize(Decimal("1.00"))
+# number = number.quantize(Decimal("1.00")) # округление до 2х точек после запятой
 # print(number)
+#
+# number_2 = Decimal("0.226")
+# number_2 = number_2.quantize(Decimal("1.00"))
+# print(number_2)
 #
 # number = Decimal("0.333")
 # number = number.quantize(Decimal("1.0000"))
@@ -72,7 +77,7 @@ import math
 # number = Decimal("12.123456789")
 # number = number.quantize(Decimal("1.000"))
 # print(number)
-#
+
 # number = Decimal("12.5555")
 # number = number.quantize(Decimal("1.000"))
 # print(number)
@@ -93,7 +98,7 @@ import math
 ###
 # datetime
 # import datetime as dt
-#
+
 # print(dt.date.today())
 # print(dt.date(2022, 11, 10))
 # print(dt.time())
@@ -169,7 +174,7 @@ import math
 # print(names)
 #
 # #
-# users_data = [f"{key}: {users[key]}" for key in users.keys() if key > 2]
+# users_data = [f"{key}: {users[key]}" for key in users.keys() if key > 1]
 # print(users_data)
 #
 # #
@@ -181,7 +186,7 @@ import math
 # numbers = [-1, 2, -3, 4, -5, 6, -7, 7]
 # new_numbers = [num * 2 if num > 5 else num for num in numbers if num > 0]
 # print(new_numbers)
-#
+# #
 # # #
 # my_dict = {i: i ** 2 for i in range(10)}
 # print(my_dict)
@@ -209,10 +214,10 @@ import math
 # def create_generator():
 #     number = 1
 #     while True:
-#         yield number
+#         yield number # запоминать значение
 #         number += 1
-#
-#
+# #
+# #
 # my_gen = create_generator()
 # print(my_gen)
 # try:
@@ -270,8 +275,8 @@ import math
 import re
 
 # result = re.match(r'he', 'hello world hello')
-# print(result)
-# print(result.group(0))
+# print(result) # <re.Match object; span=(0, 2), match='he'>
+# print(result.group(0)) # Вернул то, что нашел, т.е. he
 # #
 # #
 # result = re.search(r'world', 'hello world hello') # r - сырая строка
@@ -282,7 +287,7 @@ import re
 # result = re.findall(r'he', 'hello world hello')
 # print(result)
 # #
-# #
+# # #
 # result = re.split(r'l', 'hello world hello', maxsplit=1)
 # print(result)
 # #
@@ -311,16 +316,16 @@ import re
 #
 # result = re.findall(r'^\w+', "It is a long established fact that a reader")
 # print(result)
-#
+# #
 # result = re.findall(r'\w\w', "It is a long established fact that a reader")
 # print(result)
 #
 # result = re.findall(r'\b\w', "It is a long established fact that a reader")
 # print(result)
 #
-# result = re.findall(r'@\w+.\w+', "test1@gmail.com, test2@qqq.com, test3@www.com")
-# print(result)
-#
+result = re.findall(r'@\w+.\w+', "test1@gmail.com, test2@qqq.com, test3@www.com")
+print(result)
+# #
 # result = re.findall(r'@\w+.(\w+)', "test1@gmail.com, test2@qqq.ua, test3@www.com")
 # print(result)
 #
